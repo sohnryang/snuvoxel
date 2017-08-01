@@ -18,7 +18,7 @@
             padding: 0;
             overflow: hidden;
         }
-        
+
         #ui {
             position: absolute;
             bottom: 10px;
@@ -28,7 +28,7 @@
             font-family: 'Karla', sans-serif;
             z-index: 1;
         }
-        
+
         a#magic-window {
             display: block;
             color: white;
@@ -144,18 +144,6 @@
         // Add a repeating grid as a skybox.
         var loader = new THREE.TextureLoader();
         loader.load('img/box.png', onTextureLoaded);
-
-        var skyboxMatArray = [];
-        for (var i = 0; i < 6; i++) {
-            skyboxMatArray.push(new THREE.MeshBasicMaterial({
-                map: THREE.ImageUtils.loadTexture('image/box.png'),
-                side: THREE.BackSide
-            }));
-        }
-        var skyMat = new THREE.MeshFaceMaterial(skyboxMatArray);
-        var skyGeometry = new THREE.CubeGeometry(100, 100, 100);
-        skybox = new THREE.Mesh(skyGeometry, skyMaterial);
-        scene.add(skybox);
 
         // Create 3D objects.
         for (var i = 0; i < 10; i++) {
@@ -275,6 +263,18 @@
     }
 
     function setStageDimensions(stage) {
+        var skyboxMatArray = [];
+        for (var i = 0; i < 6; i++) {
+            skyboxMatArray.push(new THREE.MeshBasicMaterial({
+                map: THREE.ImageUtils.loadTexture('image/box.png'),
+                side: THREE.BackSide
+            }));
+        }
+        var skyMat = new THREE.MeshFaceMaterial(skyboxMatArray);
+        var skyGeometry = new THREE.CubeGeometry(100, 100, 100);
+        skybox = new THREE.Mesh(skyGeometry, skyMaterial);
+        scene.add(skybox);
+
         // Make the skybox fit the stage.
         var material = skybox.material;
         scene.remove(skybox);
