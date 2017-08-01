@@ -145,6 +145,18 @@
         var loader = new THREE.TextureLoader();
         loader.load('img/box.png', onTextureLoaded);
 
+        var skyboxMatArray = [];
+        for (var i = 0; i < 6; i++) {
+            skyboxMatArray.push(new THREE.MeshBasicMaterial({
+                map: THREE.ImageUtils.loadTexture('image/box.png'),
+                side: THREE.BackSide
+            }));
+        }
+        var skyMat = new THREE.MeshFaceMaterial(skyboxMatArray);
+        var skyGeometry = new THREE.CubeGeometry(100, 100, 100);
+        skybox = new THREE.Mesh(skyGeometry, skyMaterial);
+        scene.add(skybox);
+
         // Create 3D objects.
         for (var i = 0; i < 10; i++) {
             for (var j = 0; j < 10; j++) {
@@ -264,9 +276,12 @@
 
     function setStageDimensions(stage) {
         // Make the skybox fit the stage.
+        var material = skybox.material;
+        scene.remove(skybox);
 
         // Size the skybox according to the size of the actual stage.
         var geometry = new THREE.BoxGeometry(stage.sizeX, boxSize, stage.sizeZ);
+        skybox = new THREE.Mesh(geometry, material);
 
         // Place it on the floor.
         skybox.position.y = boxSize / 2;
