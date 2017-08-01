@@ -270,7 +270,7 @@
                 side: THREE.BackSide
             }));
         }
-        var skyMat = new THREE.MeshFaceMaterial(skyboxMatArray);
+        var skyMaterial = new THREE.MeshFaceMaterial(skyboxMatArray);
         var skyGeometry = new THREE.CubeGeometry(100, 100, 100);
         skybox = new THREE.Mesh(skyGeometry, skyMaterial);
         scene.add(skybox);
