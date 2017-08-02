@@ -8,33 +8,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <style>
-        body {
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            color: #fff;
-            margin: 0px;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        #ui {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-family: 'Karla', sans-serif;
-            z-index: 1;
-        }
-
-        a#magic-window {
-            display: block;
-            color: white;
-            margin-top: 1em;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="node_modules/three/src/Three.js"></script>
     <script src="node_modules/es6-promise/dist/es6-promise.min.js"></script>
     <script src="node_modules/three/examples/js/controls/VRControls.js"></script>
     <script src="node_modules/three/examples/js/effects/VREffect.js"></script>
@@ -46,7 +21,7 @@
             BUFFER_SCALE: 0.5
         };
     </script>
-    <script src="main.js"></script>
+    <script src"bundle.js"></script>
 </head>
 
 <body>

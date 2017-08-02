@@ -1,4 +1,4 @@
-var THREE = require('three-js')();
+import THREE from 'three'
 
 var lastRenderTime = 0;
 var vrDisplay;

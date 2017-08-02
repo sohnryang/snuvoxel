@@ -3,6 +3,9 @@
   "version": "0.0.0-dev",
   "description": "SNU voxel VR",
   "main": "index.html",
+  "scripts": {
+    "build": "webpack"
+  }
   "dependencies": {
     "es6-promise": "latest",
     "three": "latest",
