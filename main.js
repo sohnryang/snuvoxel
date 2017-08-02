@@ -1,3 +1,5 @@
+var THREE = require('three-js')();
+
 var lastRenderTime = 0;
 var vrDisplay;
 var boxSize = 5;
